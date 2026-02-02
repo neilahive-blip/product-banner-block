@@ -1,32 +1,100 @@
 // Editor-specific styles for the Product Banner block
 
 .product-banner-editor {
-    .product-banner-block-editor-wrapper {
-        min-height: 400px;
-        position: relative;
-    }
+  .product-banner-block-editor-wrapper {
+    min-height: 400px;
+    position: relative;
+  }
 
-    .product-banner-image-preview {
-        margin-bottom: 16px;
+  .product-banner-image-preview {
+    margin-bottom: 16px;
 
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-            margin-bottom: 8px;
-        }
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 8px;
     }
+  }
 }
 
 // Inspector controls
 .components-panel__body {
-    .product-banner-image-preview {
-        img {
-            display: block;
-            margin-bottom: 10px;
-            max-width: 200px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+  .product-banner-image-preview {
+    img {
+      display: block;
+      margin-bottom: 10px;
+      max-width: 200px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
     }
+  }
+}
+
+// Product selector styles
+.product-banner-product-selector {
+  width: 100%;
+
+  .components-button-group {
+    margin-bottom: 12px;
+  }
+}
+
+// Search interface
+.product-banner-search {
+  .product-banner-search-results {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-top: 12px;
+    padding: 8px;
+    background: #f5f5f5;
+    border-radius: 4px;
+
+    .product-search-item {
+      justify-content: flex-start;
+      text-align: left;
+
+      &.is-selected {
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// Selected product info
+.product-banner-selected-info {
+  margin-top: 12px;
+  padding: 12px;
+  background: #f0f6fc;
+  border-left: 3px solid #0073aa;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  strong {
+    margin-right: 8px;
+  }
+}
+
+// Button preview in sidebar
+.product-banner-button-preview {
+  margin-top: 16px;
+  padding: 16px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  text-align: center;
+
+  p {
+    margin-bottom: 12px;
+  }
+
+  .product-banner-button {
+    display: inline-block;
+    cursor: default;
+    pointer-events: none;
+  }
 }

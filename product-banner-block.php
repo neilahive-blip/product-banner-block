@@ -42,6 +42,9 @@ function render_product_banner_block($attributes)
     $text       = isset($attributes['text']) ? wp_kses_post($attributes['text']) : '';
     $image_id   = isset($attributes['imageId']) ? intval($attributes['imageId']) : 0;
     $use_product_image = isset($attributes['useProductImage']) ? $attributes['useProductImage'] : true;
+    $button_text = isset($attributes['buttonText']) ? esc_html($attributes['buttonText']) : __('Shop Now', 'neve');
+    $button_style = isset($attributes['buttonStyle']) ? esc_attr($attributes['buttonStyle']) : 'gradient-purple';
+    $button_radius = isset($attributes['buttonBorderRadius']) ? intval($attributes['buttonBorderRadius']) : 50;
 
     // Get product if ID is set
     $product = $product_id ? wc_get_product($product_id) : null;
@@ -67,6 +70,10 @@ function render_product_banner_block($attributes)
     $product_price = $product ? $product->get_price_html() : '';
     $product_url = $product ? get_permalink($product->get_id()) : '#';
 
+    // Button classes and styles
+    $button_class = 'product-banner-button button-style-' . $button_style;
+    $button_inline_style = 'border-radius: ' . $button_radius . 'px;';
+
     // Build the HTML
     ob_start();
 ?>
@@ -85,8 +92,8 @@ function render_product_banner_block($attributes)
 
             <?php if ($product) : ?>
                 <div class="product-banner-price"><?php echo $product_price; ?></div>
-                <a href="<?php echo esc_url($product_url); ?>" class="product-banner-button">
-                    <?php _e('Shop Now', 'neve'); ?>
+                <a href="<?php echo esc_url($product_url); ?>" class="<?php echo esc_attr($button_class); ?>" style="<?php echo esc_attr($button_inline_style); ?>">
+                    <?php echo $button_text; ?>
                 </a>
             <?php endif; ?>
         </div>
