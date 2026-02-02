@@ -1,0 +1,32 @@
+// Editor-specific styles for the Product Banner block
+
+.product-banner-editor {
+    .product-banner-block-editor-wrapper {
+        min-height: 400px;
+        position: relative;
+    }
+
+    .product-banner-image-preview {
+        margin-bottom: 16px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+    }
+}
+
+// Inspector controls
+.components-panel__body {
+    .product-banner-image-preview {
+        img {
+            display: block;
+            margin-bottom: 10px;
+            max-width: 200px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    }
+}
