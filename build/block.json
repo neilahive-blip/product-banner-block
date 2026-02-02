@@ -41,6 +41,18 @@
     "useProductImage": {
       "type": "boolean",
       "default": true
+    },
+    "buttonText": {
+      "type": "string",
+      "default": "Shop Now"
+    },
+    "buttonStyle": {
+      "type": "string",
+      "default": "gradient-purple"
+    },
+    "buttonBorderRadius": {
+      "type": "number",
+      "default": 50
     }
   },
   "supports": {
